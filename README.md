@@ -6,7 +6,6 @@
 
 - **Innovation and Competitive Edge**: Companies leverage Big Data to innovate, improve operations, and gain a competitive edge. For instance, by analyzing customer data, businesses can personalize marketing strategies and improve customer experiences.
 
-insert an image:
 ![alt text](1.png "Big Data")
 
 ## 2. Applications of Big Data
