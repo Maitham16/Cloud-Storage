@@ -365,6 +365,7 @@ Supports range scans, individual row retrievals, and full scans.
 <img src="14.jpg" width="50%">
 
 <img src="15.png" width="50%">
+
 ### Storage Format
 
 Uses a column-oriented storage format.
