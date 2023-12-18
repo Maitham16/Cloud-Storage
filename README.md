@@ -289,7 +289,7 @@ The hash directory is fully duplicated at each node, as seen in systems like Dyn
 
 Amazon Dynamo is a distributed storage system designed to prioritize high availability, making it particularly suitable for applications like shopping carts in e-commerce websites. Here's a detailed breakdown of its key features:
 
-<img src="13.png" width="50%">
+<img src="13.jpg" width="50%">
 
 ### Hash Directory Maintenance
 
@@ -362,9 +362,9 @@ Supports range scans, individual row retrievals, and full scans.
 
 ## HBase
 
-<img src="14.png" width="50%">
+<img src="14.jpg" width="50%">
 
-<img src="15.jpg" width="50%">
+<img src="15.png" width="50%">
 ### Storage Format
 
 Uses a column-oriented storage format.
