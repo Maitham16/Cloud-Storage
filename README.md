@@ -426,3 +426,34 @@ These regions play a key role in optimizing query performance and handling time-
 <img src="18.png" width="50%">
 
 These tools and technologies are pivotal in the field of data management and analytics, offering scalable solutions for handling and analyzing large and complex datasets.
+
+## Dremel: The Execution Engine
+
+- Dremel is a scalable, interactive ad hoc query system for analysis of read-only nested data.
+- It combines multi-level execution trees and columnar data layout to achieve high performance and scalability, particularly useful for data exploration and experimentation.
+
+<img src="19.png" width="50%">
+
+## Colossus
+
+- Colossus is the successor to the Google File System (GFS), designed to manage petabytes of data and millions of operations per second.
+- It provides fault tolerance and replication, crucial for maintaining data integrity and availability in large-scale systems.
+
+## Borg
+
+- Borg is a cluster management system used by Google to manage and schedule computational workloads across a large number of clusters.
+- It is known for its efficiency and ability to handle a vast range of applications, from long-running services to batch jobs.
+
+## Jupiter: The Network
+
+- Jupiter is Google's data center network, offering unprecedented scale and bandwidth.
+- It is designed to efficiently handle the massive amounts of data required by Google's extensive range of services.
+
+## BigQuery: The Service
+
+<img src="20.png" width="50%">
+
+- BigQuery is a fully-managed, serverless data warehouse that enables scalable analysis of big data.
+- It is known for its fast SQL query execution and ease of use, making it a popular choice for data analysis tasks.
+
+Each of these components plays a crucial role in Google's infrastructure, supporting its ability to process and analyze vast amounts of data quickly and reliably.
