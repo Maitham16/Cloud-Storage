@@ -432,7 +432,7 @@ These tools and technologies are pivotal in the field of data management and ana
 - Dremel is a scalable, interactive ad hoc query system for analysis of read-only nested data.
 - It combines multi-level execution trees and columnar data layout to achieve high performance and scalability, particularly useful for data exploration and experimentation.
 
-<img src="19.png" width="50%">
+<img src="19.png" width="80%">
 
 ## Colossus
 
