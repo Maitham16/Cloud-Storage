@@ -221,3 +221,67 @@ This approach assumes the use of a single RDBMS system. It involves adding multi
 
 These concepts are fundamental in understanding modern data management and storage systems, especially in the context of large-scale, distributed environments. Partition tolerance ensures system resilience in the face of network issues, while relational databases and RDBMS focus on structured data management with scalability as a primary challenge. The traditional scale-out approach and hyper-scale architecture provide different methodologies for handling these challenges, with the latter being more aligned with current cloud computing and big data trends.
 
+## Cloud Storage from Theory to Practice
+
+### NoSQL
+
+<img src="11.png" width="50%">
+
+NoSQL databases relax one or more of the ACID (Atomicity, Consistency, Isolation, Durability) properties. They feature a distributed, fault-tolerant architecture and are scalable. NoSQL databases do not typically use the concept of joins.
+
+### Distributed Access Structures
+
+In NoSQL, indexing and hashing-based techniques are common. Consistent hashing and tree-based techniques like distributed B-Trees are examples of distributed access structures used in NoSQL databases.
+
+### Indexing
+
+<img src="12.png" width="50%">
+
+Indexing is used to efficiently locate and access data in a database. It associates each key with the physical address of the corresponding value, enabling operations like insertion, deletion, key search, and optionally range search. Indexing helps in quickly finding data without scanning the entire dataset.
+
+#### Hashing (Centralized)
+
+In centralized hashing, a hash function is used to map data to buckets. However, it faces issues of dynamicity and inconsistencies, especially in distributed systems.
+
+#### Hashing (Distributed)
+
+The basic idea is to use the same hash function, with servers replacing buckets. A common approach is to use the modulo function, mapping a key-value pair to a server. However, this can become inconsistent if the number of servers changes or if an invalid value for N is used by a client.
+
+### Consistent Hashing
+
+Consistent hashing is a technique used in distributed systems for efficiently allocating and locating nodes (servers) in a network. It ensures that adding or removing a node does not significantly change the key-to-server mapping.
+
+#### Example for Indexing and Hashing
+
+- **Indexing**: Think of a library catalog as an index. If you have a book title (key), the catalog (index) helps you find the physical location (value) of the book in the library.
+- **Hashing (Centralized)**: In a centralized system, a hash function converts a data item (like a username) into a hash code, corresponding to a specific storage location (like a particular server).
+- **Hashing (Distributed)**: In a network of computers (servers), a hash function determines which computer should store a piece of data, distributing data evenly across the network.
+
+### Refinements
+
+#### Replication for Fault Tolerance
+
+When a server fails, the system automatically replicates its data to the next server on the ring, ensuring data availability and resilience in case of server failures.
+
+#### Load Balancing with Virtual Nodes
+
+Servers are mapped to multiple points on the ring (virtual nodes), balancing the load more evenly across the network. More virtual nodes mean more load for a server, aiding data relocation if a server fails. This is particularly useful in large-scale, heterogeneous environments.
+
+### Hash Directory Management
+
+#### Master Node Approach
+
+The hash directory can be placed on a specific 'Master' node, acting as a load balancer. However, this approach raises scalability issues.
+
+#### Ring-based Record Keeping
+
+Each node records its successor on the ring, but this may require O(N) messages for routing queries and is not resilient to failures.
+
+#### Logging Chosen Nodes
+
+Each node records log N carefully chosen other nodes (common in Peer-to-Peer networks), ensuring O(log N) messages for routing queries. This is a convenient trade-off for dynamic networks.
+
+#### Full Duplication
+
+The hash directory is fully duplicated at each node, as seen in systems like Dynamo. This ensures routing with just 1 message but requires a heavy maintenance protocol, often achieved through gossiping.
+
