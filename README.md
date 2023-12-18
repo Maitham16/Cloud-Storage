@@ -285,3 +285,113 @@ Each node records log N carefully chosen other nodes (common in Peer-to-Peer net
 
 The hash directory is fully duplicated at each node, as seen in systems like Dynamo. This ensures routing with just 1 message but requires a heavy maintenance protocol, often achieved through gossiping.
 
+## Amazon Dynamo
+
+Amazon Dynamo is a distributed storage system designed to prioritize high availability, making it particularly suitable for applications like shopping carts in e-commerce websites. Here's a detailed breakdown of its key features:
+
+<img src="13.png" width="50%">
+
+### Hash Directory Maintenance
+
+- **Method**: Dynamo duplicates and maintains the hash directory at each node.
+- **Communication**: Uses gossiping protocols, allowing queries to be routed to the correct server with just one message.
+- **Advantage**: This approach enhances the system's efficiency in locating the correct node for any given data request.
+
+### Data Replication
+
+- **Replication Strategy**: The hosting server replicates 'N' copies of its objects on the 'N' distinct nodes that follow it on the ring.
+- **Parameterization**: 'N' is an application-specific parameter, allowing customization based on the system's needs.
+- **Fault Tolerance**: This replication enhances the system's resilience to node failures.
+
+### Update Propagation
+
+- **Method**: Updates are propagated asynchronously across the network.
+- **Conflict Resolution**: This can result in update conflicts, which are resolved by the application at the time of reading.
+- **Benefits and Challenges**: Asynchronous updates reduce latency but require robust conflict resolution mechanisms.
+
+### Failure Detection
+
+- **Mechanism**: Dynamo employs a fully distributed failure detection mechanism.
+- **Node-Level Monitoring**: Failures are detected by individual nodes when they fail to communicate with others.
+- **Resilience**: This decentralized approach ensures the system quickly adapts to changes in network topology due to node failures.
+
+### Scalability Concerns
+
+- **Operational Flow**: All operations in Dynamo follow a top-down path.
+- **Potential Issue**: While this structure is generally efficient, it could become a limiting factor in terms of scalability under certain conditions.
+
+In summary, Amazon Dynamo's architecture is tailored to ensure high availability and efficient data management in a distributed environment. Its design choices around hash directory management, data replication, update propagation, and failure detection make it particularly suitable for large-scale, dynamic systems where high availability and fault tolerance are critical.
+
+## B-Tree (Centralized and Distributed)
+
+### Centralized B-Tree
+
+Traditional B-trees are centralized, where all operations are controlled from a single point. This can create bottlenecks, especially in large-scale systems.
+
+### Distributed B-Tree
+
+In distributed environments, B-trees are adapted to work across multiple nodes. This involves caching parts of the tree structure on client nodes, replicating upper levels of the tree for fault tolerance, and using routing tables at each node for efficient navigation.
+
+## BigTable and HBase
+
+### Overview
+
+Both BigTable and HBase can be seen as distributed map structures with features derived from B-trees and non-dense indexed files.
+
+### Architecture
+
+They use a master-many servers architecture. The master node maintains the root and handles administrative tasks, while scalability is achieved through client-side caching.
+
+### Data Model
+
+They follow a column-oriented database model, with a table structure that includes column families and individual columns. Each column family is stored in a separate file.
+
+## BigTable and Apache HBase
+
+### Column Versioning
+
+They support versioned columns, allowing for historical data tracking.
+
+### Architecture
+
+Based on a distributed file system with region servers for data distribution and an in-memory cache for improved query performance.
+
+### Query Types
+
+Supports range scans, individual row retrievals, and full scans.
+
+## HBase
+
+<img src="14.png" width="50%">
+
+<img src="15.jpg" width="50%">
+### Storage Format
+
+Uses a column-oriented storage format.
+
+### Data Locality
+
+HBase is aware of data locality, which is advantageous for distributed access. It supports MapReduce-style access, replication, and fault tolerance.
+
+### Data Model
+
+Internally, HBase uses a sorted map structure with row keys pointing to sorted maps of columns, each containing values with timestamps.
+
+## HBase Regions
+
+### Region Definition
+
+Regions in HBase are contiguous ranges of rows stored together, enabling efficient data access.
+
+### Auto-sharding
+
+HBase automatically shards data into regions.
+
+### Region Size
+
+Typically, each server hosts between 10 to 1000 regions, each ranging between 1 and 2 GB, depending on the hardware.
+
+### Query Performance
+
+These regions play a key role in optimizing query performance and handling time-series data.
+
