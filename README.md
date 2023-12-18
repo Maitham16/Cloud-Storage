@@ -203,7 +203,7 @@ The choice among these three properties depends on the specific requirements and
 
 ### Relational Databases
 
-<img src="10.png" width="50%">
+<img src="10.jpg" width="50%">
 
 **Relational Database Management Systems (RDBMS)** store data in a collection of tables and use relational operators for data manipulation. They primarily employ SQL as their query language, hence also known as SQL databases.
 
