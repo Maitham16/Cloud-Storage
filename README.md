@@ -195,3 +195,29 @@ The CAP Theorem posits that a distributed system can only guarantee two of these
 
 The choice among these three properties depends on the specific requirements and constraints of the system being designed. This theorem is crucial for understanding the design trade-offs in distributed systems, particularly those involving large-scale data storage and processing.
 
+## Partition Tolerance
+
+**Partition tolerance** in distributed systems refers to the ability of the system to scale over multiple network nodes. It's a key aspect of the CAP Theorem, ensuring that the system continues to operate despite partitions (i.e., breakdowns in communication) between nodes in a network.
+
+<img src="9.png">
+
+### Relational Databases
+
+<img src="10.png" width="50%">
+
+**Relational Database Management Systems (RDBMS)** store data in a collection of tables and use relational operators for data manipulation. They primarily employ SQL as their query language, hence also known as SQL databases.
+
+### RDBMS: The Challenge is Scalability
+
+The main scalability challenge in RDBMS is handling large data sets. The **master-slave architecture**, where all writes are to the master and reads from replicated slaves, can cause problems as the master needs to duplicate data to slaves. **Partitioning or sharding** scales well for both reads and writes but requires the application to be partition-aware and can lead to a loss of referential integrity across shards.
+
+### “Traditional” Scale-Out Approach
+
+This approach assumes the use of a single RDBMS system. It involves adding multiple slave databases to parallelize read access, with writes handled by the RDBMS master. The next steps include adding an in-memory cache for reads (which can lead to consistency issues) and beefing up the master (scaling vertically), which can be expensive. Data is often denormalized to optimize for specific access patterns.
+
+### Hyper-Scale Architecture
+
+**Hyper-scale architecture** contrasts with conventional architecture by prioritizing high scalability and availability. It is characteristic of Web 2.0 and cloud computing, integrating compute and storage nodes in the same unit. This architecture handles structured, semi-structured, and unstructured data. It is suited for **NoSQL databases**, which do not require a fixed table schema and are better for certain problems where non-relational storage solutions are more efficient.
+
+These concepts are fundamental in understanding modern data management and storage systems, especially in the context of large-scale, distributed environments. Partition tolerance ensures system resilience in the face of network issues, while relational databases and RDBMS focus on structured data management with scalability as a primary challenge. The traditional scale-out approach and hyper-scale architecture provide different methodologies for handling these challenges, with the latter being more aligned with current cloud computing and big data trends.
+
