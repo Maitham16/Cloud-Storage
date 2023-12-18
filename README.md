@@ -79,9 +79,9 @@ Additional Information:
 
 There are several architectural models designed to handle the complexities of Big Data processing. Two prominent ones are:
 
-### Lambda Architecture:
-
 <img src="4.png" width="50%">
+
+### Lambda Architecture:
 
 - **Batch Layer (Cold Path)**: This layer stores all incoming data in its raw form and processes it in batches. It is responsible for comprehensive data storage and batch processing.
 
@@ -93,6 +93,32 @@ There are several architectural models designed to handle the complexities of Bi
 
 In the Kappa Architecture model, all data flows through a single path using a stream processing system. This simplifies the architecture by removing the need for separate batch and real-time processing components, making it more streamlined and efficient.
 
+<img src="6.jpg" width="50%">
+
 These architectural models play a crucial role in managing and processing large volumes of data in Big Data systems. They provide a framework for handling data processing at scale and ensuring that organizations can derive valuable insights from their data in real-time or batch processing scenarios.
 
-<img src="6.jpg" width="50%">
+## Key Concepts in Cloud Computing and Parallel Computing
+
+### Path to Cloud Computing:
+
+Cloud computing utilizes a client-server paradigm with a thin-client software running on the user's machine, while computations are carried out on the cloud, usually by many machines working in parallel.
+
+### Parallel Computing:
+
+Parallel hardware and software systems are used to solve problems demanding resources not available on a single system and to reduce the time required to obtain a solution.
+
+### Speed-Up:
+
+- **Speed-up (S)** measures the effectiveness of parallelization: `S(N) = T(1) / T(N)`, where `T(1)` is the execution time of the sequential computation and `T(N)` is the execution time when N parallel computations are performed.
+
+- **Amdahl’s Law and Gustafson’s Law** discuss the impact of computing power on the speed of analyzing the same dataset or larger datasets.
+
+### Parallelism:
+
+- **Data parallelism** involves partitioning data into several blocks processed in parallel.
+
+- **Single Program Multiple Data (SPMD)** entails running multiple copies of the same program concurrently, each on a different data block.
+
+These concepts underscore the foundational elements and efficiency considerations in cloud computing's evolution, emphasizing parallel processing's role in handling large-scale computational tasks.
+
+<img src="7.png" width="50%">
