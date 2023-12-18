@@ -160,7 +160,8 @@ A consistency model establishes rules for the visibility and order of updates. S
 
 - For instance, if row X is replicated on nodes M and N, and client A writes row X to node N, it's uncertain if client B will see this write when reading from node M after some time.
 - **Strong consistency** requires synchronous replication and heavy locking mechanisms. SQL databases favor this approach. The two-phase commit protocol is used to ensure strong consistency in distributed settings.
-- **Weak consistency** accepts serving some requests with outdated data. **Eventual consistency** guarantees the system will converge to a consistent state based on the last version.
+- **Weak consistency** accepts serving some requests with outdated data. 
+- **Eventual consistency** guarantees the system will converge to a consistent state based on the last version.
 
 ### Availability
 
