@@ -108,12 +108,12 @@ Parallel hardware and software systems enable solving problems that demand resou
 ### Speed-up
 
 The effectiveness of parallelization is measured by speed-up, where:
-\[S(N) = \frac{T(1)}{T(N)}\]
+\[S(N) = \frac{T(1)}{T(N)}\]\
 
 - **Amdahl’s Law**:
     - Amdahl’s Law is used to understand the potential speed-up in a parallel computing environment, especially when the problem or dataset size is fixed.
     - The law states that if α is the fraction of running time a sequential program spends on non-parallelizable segments, then the speed-up S(N) achieved by using NN parallel processors is given by:
-      \[S(N) = \frac{1}{α + \frac{1 - α}{N}}]\
+      \[S(N) = \frac{1}{α + \frac{1 - α}{N}}\]
     - This formula shows that the speed-up of a program using multiple processors in parallel computing is limited by the sequential fraction of the program. In simple terms, even if you add more processors, the portion of the task that cannot be parallelized sets a limit to the overall speed-up you can achieve.
 
 - **Gustafson’s Law**:
