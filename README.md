@@ -396,3 +396,33 @@ Typically, each server hosts between 10 to 1000 regions, each ranging between 1 
 
 These regions play a key role in optimizing query performance and handling time-series data.
 
+## Query Performance and Time-Series Data
+
+- Time-series data, often sequential and time-stamped, is prevalent in various applications like financial markets, sensor data, and more.
+- Optimizing query performance for time-series data involves specialized data structures and indexing strategies. Systems often employ techniques like down-sampling and roll-ups to manage large volumes of such data efficiently.
+
+## Apache Cassandra
+
+- Apache Cassandra is a distributed NoSQL database known for its scalability and high availability without compromising performance.
+- It is particularly well-suited for handling large amounts of data across multiple commodity servers, providing robust support for clusters spanning multiple datacenters.
+- Cassandra offers a schema-free data model, making it a flexible solution for various types of data.
+
+<img src="16.jpg" width="50%">
+
+## Google BigQuery
+
+- Google BigQuery is a fully-managed, serverless data warehouse that enables scalable analysis of large datasets.
+- It allows for SQL queries against massive datasets, handling the underlying infrastructure automatically.
+- BigQuery is designed for speed and scalability, leveraging Google's infrastructure to analyze data in real-time.
+
+<img src="17.svg" width="50%">
+
+## BigQuery Architecture
+
+- The architecture of BigQuery is a columnar storage format, which allows for faster querying and data retrieval, especially for large datasets.
+- It separates storage and compute, enabling users to scale each independently.
+- BigQuery's design allows for high-speed data processing, making it ideal for analyzing large datasets quickly.
+
+<img src="18.png" width="50%">
+
+These tools and technologies are pivotal in the field of data management and analytics, offering scalable solutions for handling and analyzing large and complex datasets.
