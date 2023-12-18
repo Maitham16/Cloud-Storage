@@ -97,28 +97,40 @@ In the Kappa Architecture model, all data flows through a single path using a st
 
 These architectural models play a crucial role in managing and processing large volumes of data in Big Data systems. They provide a framework for handling data processing at scale and ensuring that organizations can derive valuable insights from their data in real-time or batch processing scenarios.
 
-## Key Concepts in Cloud Computing and Parallel Computing
+## The Path to Cloud Computing
 
-### Path to Cloud Computing:
+Cloud computing is based on ideas and experiences from years of research in parallel computing and distributed systems. Cloud applications often follow a client-server model, with a thin-client on the user's machine and computations carried out on the cloud, usually by many machines in parallel.
 
-Cloud computing utilizes a client-server paradigm with a thin-client software running on the user's machine, while computations are carried out on the cloud, usually by many machines working in parallel.
+### Parallel Computing
 
-### Parallel Computing:
+Parallel hardware and software systems enable solving problems that demand resources beyond a single system and reduce the time to obtain a solution. Parallelism involves using multiple computing resources simultaneously to solve complex problems more efficiently than with a single computer.
 
-Parallel hardware and software systems are used to solve problems demanding resources not available on a single system and to reduce the time required to obtain a solution.
+### Speed-up
 
-### Speed-Up:
+The effectiveness of parallelization is measured by speed-up, where:
+\[S(N) = \frac{T(1)}{T(N)}\]
 
-- **Speed-up (S)** measures the effectiveness of parallelization: `S(N) = T(1) / T(N)`, where `T(1)` is the execution time of the sequential computation and `T(N)` is the execution time when N parallel computations are performed.
+- **Amdahl’s Law**:
+    - Amdahl’s Law is used to understand the potential speed-up in a parallel computing environment, especially when the problem or dataset size is fixed.
+    - The law states that if α is the fraction of running time a sequential program spends on non-parallelizable segments, then the speed-up S(N) achieved by using NN parallel processors is given by:
+      \[S(N) = \frac{1}{α + \frac{1 - α}{N}}\]
+    - This formula shows that the speed-up of a program using multiple processors in parallel computing is limited by the sequential fraction of the program. In simple terms, even if you add more processors, the portion of the task that cannot be parallelized sets a limit to the overall speed-up you can achieve.
 
-- **Amdahl’s Law and Gustafson’s Law** discuss the impact of computing power on the speed of analyzing the same dataset or larger datasets.
+- **Gustafson’s Law**:
+    - Gustafson’s Law shifts the focus from fixed problem size to fixed computing time, allowing the problem or dataset size to be arbitrarily large.
+    - According to this law, the scaled speed-up S(N) with NN parallel processes is given by:
+      \[S(N) = α + N(1 - α) = N - α(N - 1)\]
+    - This implies that more computing power (more processors) will enable the analysis of larger datasets or more in-depth analysis within the same time frame. The law suggests that the limitations of the sequential part of a code can be balanced by increasing the problem size.
 
-### Parallelism:
+These laws provide a framework for understanding the benefits and limitations of parallel processing in computing environments. Amdahl’s Law emphasizes the constraint imposed by the non-parallelizable portion of a task, while Gustafson’s Law highlights the advantages of parallel processing in scaling up the problem size.
 
-- **Data parallelism** involves partitioning data into several blocks processed in parallel.
+### Parallelism
 
-- **Single Program Multiple Data (SPMD)** entails running multiple copies of the same program concurrently, each on a different data block.
+In data parallelism, data is partitioned into several blocks, and these blocks are processed in parallel. This is known as Single Program Multiple Data (SPMD), where multiple copies of the same program run concurrently, each on a different data block.
 
-These concepts underscore the foundational elements and efficiency considerations in cloud computing's evolution, emphasizing parallel processing's role in handling large-scale computational tasks.
+#### Example of Speed-up Calculation
+
+Consider a task that takes 100 seconds to complete sequentially (T(1) = 100s).
+If the same task is parallelized across 10 machines and now takes 15 seconds (T(10) = 15s), the speed-up, S(10), would be approximately 6.67. This means the task is approximately 6.67 times faster when parallelized across 10 machines.
 
 <img src="7.png" width="50%">
