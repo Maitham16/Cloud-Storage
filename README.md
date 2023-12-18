@@ -139,3 +139,58 @@ Consider a task that takes 100 seconds to complete sequentially (T(1) = 100s).
 If the same task is parallelized across 10 machines and now takes 15 seconds (T(10) = 15s), the speed-up, S(10), would be 100 / 15 ≈ 6.67. This means the task is approximately 6.67 times faster when parallelized across 10 machines.
 
 <img src="7.png" width="50%">
+
+## Distributed Systems
+
+Distributed systems are crucial for data-centric applications where disk transfer rates are bottlenecks in large-scale data management. By parallelizing and distributing data across many machines, these bottlenecks are eliminated. Some key points about distributed systems include:
+
+- **Write once, read many distributed storage systems** are appropriate for large files that are written once and then repeatedly scanned.
+- Since bandwidth is a scarce resource, programs should be "pushed" near the data they need to access. For example, a typical setting of a Google data center includes about 40 servers per rack, 150 racks per data center (cluster), and roughly 6000 servers per data center. Google's exact number of data centers is not disclosed, but estimates suggest 150-200 data centers.
+
+### Replication and Consistency
+
+Distribution of data offers the opportunity to enhance security through replication. Some key points related to replication and consistency include:
+
+- **Replication** involves copying data from one machine (A) to a remote machine (B).
+- **Consistency** is the ability of a system to behave as if each user's transaction always runs in isolation from others and never fails. This is difficult to achieve in centralized systems due to multi-user access and concurrency and even more challenging in distributed systems.
+
+### Consistency Management
+
+A consistency model establishes rules for the visibility and order of updates. Some key aspects of consistency management include:
+
+- For instance, if row X is replicated on nodes M and N, and client A writes row X to node N, it's uncertain if client B will see this write when reading from node M after some time.
+- **Strong consistency** requires synchronous replication and heavy locking mechanisms. SQL databases favor this approach. The two-phase commit protocol is used to ensure strong consistency in distributed settings.
+- **Weak consistency** accepts serving some requests with outdated data. **Eventual consistency** guarantees the system will converge to a consistent state based on the last version.
+
+### Availability
+
+Availability is the capacity of a distributed system to minimize latency as much as possible. Some considerations related to availability include:
+
+- **Failure detection** involves monitoring nodes to detect failures early, usually via heartbeat messages, and designing quick restart protocols.
+- Replication can be either **synchronous** or **asynchronous**.
+- Traditionally, availability is expected to be extremely high (99.999%), but in large node systems, there is always a chance of a node being down or network disruptions. Thus, systems are designed to be resilient in the face of network disruptions.
+
+These concepts are integral to understanding distributed computing, where data and computation are spread across multiple nodes to enhance performance, reliability, and scalability. Replication and consistency are key to ensuring that the distributed system operates effectively and maintains integrity, while availability ensures that the system remains operational and accessible despite potential failures or disruptions.
+
+## The CAP Theorem by Eric Brewer in 2000
+
+The CAP Theorem, formulated by Eric Brewer in 2000, is a fundamental principle in the design and operation of distributed systems. It describes the trade-offs between three essential properties of distributed systems:
+
+### Consistency
+
+- **Consistency**: Every user sees the same data at each time. This means that all nodes in a distributed system reflect the same data at any given moment, ensuring that any read operation returns the most recent write.
+
+### Availability
+
+- **Availability**: Each user has read and write access to the data at all times. Availability ensures that every request receives a response about whether it was successful or failed, but it does not guarantee that the returned data is the most recent version.
+
+### Partition Tolerance
+
+- **Partition Tolerance**: The system continues to operate despite network failures that prevent some of the nodes from communicating with each other. Partition tolerance implies that the system can handle and recover from network partitions while continuing to function.
+
+The CAP Theorem posits that a distributed system can only guarantee two of these three properties simultaneously. For example, a system can ensure consistency and partition tolerance, but this might compromise availability. Similarly, a system that prioritizes availability and partition tolerance might have to sacrifice consistency.
+
+<img src="8.png" width="50%">
+
+The choice among these three properties depends on the specific requirements and constraints of the system being designed. This theorem is crucial for understanding the design trade-offs in distributed systems, particularly those involving large-scale data storage and processing.
+
