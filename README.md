@@ -127,9 +127,11 @@ This implies that more computing power (more processors) will enable the analysi
 
 These laws provide a framework for understanding the benefits and limitations of parallel processing in computing environments. Amdahl’s Law emphasizes the constraint imposed by the non-parallelizable portion of a task, while Gustafson’s Law highlights the advantages of parallel processing in scaling up the problem size.
 
-### Parallelism
+### Parallelism:
 
-In data parallelism, data is partitioned into several blocks, and these blocks are processed in parallel. This is known as Single Program Multiple Data (SPMD), where multiple copies of the same program run concurrently, each on a different data block.
+- **Data parallelism** involves partitioning data into several blocks processed in parallel.
+
+- **Single Program Multiple Data (SPMD)** entails running multiple copies of the same program concurrently, each on a different data block.
 
 ### Example of Speed-up Calculation
 
