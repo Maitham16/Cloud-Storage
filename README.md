@@ -51,3 +51,26 @@ Big Data platforms are the backbone of modern data-driven decision-making and an
 - **Real-Time Handling of Sensor Data**: Another critical feature of Big Data platforms is their ability to handle real-time sensor data. With the proliferation of IoT (Internet of Things) devices, the capability to process and analyze large streams of data from sensors in real time becomes increasingly important. This feature enables applications in areas like environmental monitoring, smart cities, and industrial automation.
 
 <img src="2.png" width="50%">
+
+## Utah Data Center - The NSA "Spy Center"
+
+The Utah Data Center, also known as the NSA "Spy Center," is a prominent illustration of Big Data application in government intelligence and surveillance. Operated by the National Security Agency (NSA), this facility is tailored for extensive data collection and analysis. Its characteristics include:
+
+- **Size and Power**: The data center is vast in size, requiring significant power for its computing and storage infrastructure. This highlights the immense data processing occurring within.
+
+- **Data Processing Capabilities**: Equipped with some of the world's most powerful supercomputers, the center has the ability to process huge volumes of data, essential for NSA's intelligence and surveillance operations.
+
+- **Global Surveillance and Intelligence Gathering**: The center is integral to NSA's worldwide intelligence efforts, capable of monitoring a broad spectrum of communications channels and electronic signals globally.
+
+- **Role in National Security**: As a vital part of the U.S. national security infrastructure, the center engages in various intelligence activities, including counterterrorism and cybersecurity.
+
+- **Public Scrutiny and Privacy Concerns**: The facility has been the focus of public scrutiny and debate, especially regarding privacy and civil liberties. The extensive data collection and surveillance capabilities pose questions about privacy and the limits of government surveillance.
+
+Additional Information:
+
+- The center encompasses approximately 100,000 square feet of data center space.
+- It consumes about 65 megawatts of power.
+- The facility, opened in October 2013, claims to host the world's fastest supercomputer, featuring 1 million Intel Xenon core processors and capable of ~100 Pflops (10^15 floating-point operations per second).
+- The energy usage of the center is 65 MW continuously, requiring 17 million gallons of water daily.
+
+<img src="3.png" width="50%">
