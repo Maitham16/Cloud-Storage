@@ -74,3 +74,25 @@ Additional Information:
 - The energy usage of the center is 65 MW continuously, requiring 17 million gallons of water daily.
 
 <img src="3.png" width="50%">
+
+## Architectural Models for Big Data Systems
+
+There are several architectural models designed to handle the complexities of Big Data processing. Two prominent ones are:
+
+### Lambda Architecture:
+
+<img src="4.png" width="50%">
+
+- **Batch Layer (Cold Path)**: This layer stores all incoming data in its raw form and processes it in batches. It is responsible for comprehensive data storage and batch processing.
+
+- **Speed Layer (Hot Path)**: The speed layer analyzes data in real-time, providing up-to-the-minute insights and processing data as it arrives.
+
+<img src="5.png" width="50%">
+
+### Kappa Architecture:
+
+In the Kappa Architecture model, all data flows through a single path using a stream processing system. This simplifies the architecture by removing the need for separate batch and real-time processing components, making it more streamlined and efficient.
+
+These architectural models play a crucial role in managing and processing large volumes of data in Big Data systems. They provide a framework for handling data processing at scale and ensuring that organizations can derive valuable insights from their data in real-time or batch processing scenarios.
+
+<img src="6.jpg" width="50%">
