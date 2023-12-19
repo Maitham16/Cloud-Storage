@@ -457,3 +457,37 @@ These tools and technologies are pivotal in the field of data management and ana
 - It is known for its fast SQL query execution and ease of use, making it a popular choice for data analysis tasks.
 
 Each of these components plays a crucial role in Google's infrastructure, supporting its ability to process and analyze vast amounts of data quickly and reliably.
+
+## Distributed File Systems
+
+<img src="21.svg" width="50%">
+
+- **Key Concept:** These systems are crucial for environments needing data storage and computation across various locations. They provide efficient data access and management while ensuring data integrity and fault tolerance.
+- **Characteristics:** Typically, these systems are scalable, reliable, and built to handle large volumes of data across multiple machines.
+
+## GFS: Motivation
+
+- **Purpose:** GFS was developed to handle large datasets and workloads, characteristic of Google's massive data processing needs.
+- **Goals:** The main goals were to ensure reliability and scalability, even when using inexpensive commodity hardware prone to failures.
+
+## GFS: Assumptions
+
+- **System Environment:** GFS assumed an operational environment with a high rate of component failures, thereby requiring a robust system architecture.
+- **Hardware Utilization:** It was built on the premise of using cost-effective hardware, leading to an emphasis on fault tolerance and error handling in the design.
+
+## GFS: Design Decisions
+
+- **File Size Optimization:** GFS was optimized for large files and sequential read/write operations.
+- **Simplicity:** The design prioritized simplicity, choosing to implement fewer features but ensuring high reliability and performance.
+- **Data Management:** It was tailored to manage a smaller number of large files rather than a large number of small files.
+
+## GFS: Architecture
+
+< img src="22.png" width="50%">
+
+- **Master-Slave Architecture:** GFS uses a single master and multiple chunk servers. The master handles metadata and orchestrates system activities, while the chunk servers store the actual data.
+- **Performance and Reliability:** This architecture ensures efficient performance and robustness, essential for managing large-scale data processing and storage.
+
+<img src="23.png" width="50%">
+
+These insights provide a comprehensive understanding of the foundational elements and operational principles of Distributed File Systems and GFS, highlighting their importance in the domain of large-scale data management.
