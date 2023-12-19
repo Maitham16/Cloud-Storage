@@ -483,7 +483,7 @@ Each of these components plays a crucial role in Google's infrastructure, suppor
 
 ## GFS: Architecture
 
-< img src="22.png" width="50%">
+<img src="22.png" width="50%">
 
 - **Master-Slave Architecture:** GFS uses a single master and multiple chunk servers. The master handles metadata and orchestrates system activities, while the chunk servers store the actual data.
 - **Performance and Reliability:** This architecture ensures efficient performance and robustness, essential for managing large-scale data processing and storage.
