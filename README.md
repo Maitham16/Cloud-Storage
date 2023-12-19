@@ -554,7 +554,7 @@ These concepts provide a comprehensive understanding of the infrastructure and m
 - **Focus on Portability:** The focus is on portable pipelines and runners, which can be deployed across various platforms, demonstrating flexibility and scalability in data processing.
 
 <img src="28.png" width="50%">
-<
+
 This part of the document outlines key strategies and considerations for programming in cloud storage environments and highlights modern frameworks that exemplify these approaches in handling large-scale data processing.
 
 **Note:** This repository is based on the lecture "Cloud Storage" from VU Cloud Computing at the University of Vienna, delivered by Aral Atakan, Enes Bajrovic, Siegfried Benkner, Martin Köhler, and Andrey Nagiyev during the WS 23/24 semester.
