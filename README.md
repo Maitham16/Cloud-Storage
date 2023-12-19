@@ -542,7 +542,7 @@ These concepts provide a comprehensive understanding of the infrastructure and m
 
 ## Example Framework
 
-- **Modern Frameworks:** The document mentions several modern frameworks that exemplify these approaches in handling large-scale data processing. Some of these include:
+- **Modern Frameworks:** There are several modern frameworks that exemplify these approaches in handling large-scale data processing. Some of these include:
     - Flink
     - Spark
     - Dataflow (Google Cloud Platform)
