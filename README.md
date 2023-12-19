@@ -491,3 +491,45 @@ Each of these components plays a crucial role in Google's infrastructure, suppor
 <img src="23.png" width="90%">
 
 These insights provide a comprehensive understanding of the foundational elements and operational principles of Distributed File Systems and GFS, highlighting their importance in the domain of large-scale data management.
+
+## GFS: Technical Details
+
+- **GFS Design:** GFS is designed to store large files across multiple machines, with a focus on reliability and fault tolerance.
+- **Master/Slave Architecture:** It uses a master/slave architecture, where a single master manages metadata, and multiple chunk servers store the actual data.
+- **Chunk-Based Storage:** Files are divided into fixed-size chunks, each identified by a unique chunk handle and version number.
+- **Consistency and Atomicity:** GFS provides consistency and atomicity guarantees through a combination of techniques like append operations and shadow masters.
+
+<img src="24.png" width="90%">
+
+## Simplified Workflow of a Write() Operation
+
+- **Write Operation:** A write operation in GFS begins with the client requesting the master for chunk locations.
+- **Data Transfer:** The master responds with the locations, and the client then sends data to all the chunk servers.
+- **Acknowledgment:** After the chunk servers acknowledge data receipt, the client sends a write request to the primary chunk server.
+- **Write Sequence:** The primary chunk server sequences the write, applies it, and forwards it to secondary servers. Once all replicas have acknowledged, the write is considered complete.
+
+## From GFS to HDFS (Hadoop Distributed File System)
+
+- **HDFS and GFS:** HDFS, inspired by GFS, is a part of the Apache Hadoop project.
+- **Large Datasets:** Like GFS, HDFS is designed to store large datasets across multiple machines and is optimized for high throughput of data.
+- **Master/Slave Architecture:** HDFS also uses a master/slave architecture, with a NameNode managing the file system metadata and DataNodes storing the actual data.
+
+<img src="25.jpg" width="90%">
+
+## HDFS Architecture
+
+- **Commodity Hardware:** HDFS's architecture is designed to run on commodity hardware and handle failures at the application layer.
+- **Block-Based Storage:** It divides files into blocks, and each block is replicated across multiple DataNodes for fault tolerance.
+- **NameNode Operations:** The NameNode executes file system namespace operations like opening, closing, and renaming files and directories.
+
+<img src="26.png" width="90%">
+
+## GCP Big Data Architectural Pattern
+
+- **Google Cloud Platform (GCP):** This pattern refers to the architecture used in Google Cloud Platform for handling big data workloads.
+- **Integrated Services:** It involves integrating various GCP services like BigQuery for data warehousing, Cloud Storage for data lakes, and Pub/Sub for real-time messaging.
+- **Emphasis on Scalability:** The architecture emphasizes scalability, performance, and cost-effectiveness, allowing for efficient data processing, storage, and analysis.
+
+<img src="27.png" width="90%">
+
+These concepts provide a comprehensive understanding of the infrastructure and methodologies used in managing and processing large-scale data in distributed environments.
