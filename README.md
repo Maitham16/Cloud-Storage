@@ -533,3 +533,28 @@ These insights provide a comprehensive understanding of the foundational element
 <img src="27.png" width="90%">
 
 These concepts provide a comprehensive understanding of the infrastructure and methodologies used in managing and processing large-scale data in distributed environments.
+
+## Compute Trends
+
+- **Programming Against Cloud Storage Technologies:** The document suggests adopting a scale-out approach rather than scaling up. This means favoring distributed systems over large single-processor, shared-memory machines due to the limits of Symmetric Multiprocessing (SMP).
+- **Data Processing Strategies:** It's recommended to move processing closer to the data, acknowledging that clusters have limited bandwidth. Data should be processed sequentially to minimize expensive random access, as disk seeks are costly but throughput can be reasonable.
+- **Scalability:** The emphasis is on achieving seamless scalability, transitioning from the concept of the "mythical man-month" to the more practical "tradable machine-hour."
+
+## Example Framework
+
+- **Modern Frameworks:** The document mentions several modern frameworks that exemplify these approaches in handling large-scale data processing. Some of these include:
+    - Flink
+    - Spark
+    - Dataflow (Google Cloud Platform)
+    - Samza
+    - Twister
+    - Kinesis (Amazon Web Services)
+    - Tensorflow
+- **Stream and Batch Processing:** These frameworks are used for both stream and batch data sourcing, processing, and writing.
+- **Focus on Portability:** The focus is on portable pipelines and runners, which can be deployed across various platforms, demonstrating flexibility and scalability in data processing.
+
+<img src="28.png" width="50%">
+<
+This part of the document outlines key strategies and considerations for programming in cloud storage environments and highlights modern frameworks that exemplify these approaches in handling large-scale data processing.
+
+**Note:** This repository is based on the lecture "Cloud Storage" from VU Cloud Computing at the University of Vienna, delivered by Aral Atakan, Enes Bajrovic, Siegfried Benkner, Martin Köhler, and Andrey Nagiyev during the WS 23/24 semester.
